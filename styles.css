@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f3f3f3;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  display: grid;
+  width: 1100px;
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding-top: 20px;
+  width: 1100px;
+  margin-inline: auto;
+}
+
+header > .logo__img {
+  width: 50px;
+}
+
+.logo__img > img {
+  width: 100%;
+}
+
+nav ul > li {
+  display: inline-block;
+  padding: 0px 20px;
+  list-style-type: none;
+}
+
+nav ul > li a[href] {
+  text-decoration: none;
+}
+
+nav ul > li a[href]:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+header img[class^="icon-menu"] {
+  display: none;
+}
+
+/* main section */
+
+main {
+  display: grid;
+  grid-template-areas:
+    "desktop__image desktop__image aside"
+    "article__hero__one article__hero__two aside"
+    "more__info more__info more__info";
+ /*  gap: 1rem 1.5rem; */
+  gap: 15px 20px;
+  place-content: center;
+  width: 1100px;
+  margin-inline: auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+main > aside {
+  background-color: hsl(240, 100%, 5%);
+}
+
+main > section.hero {
+  grid-area: desktop__image;
+}
+
+section > img {
+  width: 100%;
+}
+
+.image__hero {
+  object-fit: cover;
+  height: 490px;
+  width: 100%;
+}
+
+header > img.icon-menu {
+ /*  display: block;  */
+  width: 50px;
+  height: 35px;
+}
+
+header > img.icon-menu-close {
+  width: 40px;
+  height: 40px;
+}
+
+h1 {
+  grid-area: article__hero__one;
+  font-size: 2.5rem;
+  font-weight: 900;
+  width: 300px;
+  line-height: 3.2rem;
+ }
+
+
+.hero__description  {
+  grid-area: article__hero__two;
+  line-height: 25px;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: hsl(5, 85%, 63%);
+  color: #f3f3f3;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(240, 100%, 5%);
+}
+
+aside {
+  grid-area: aside;
+}
+
+.hero__more {
+  padding: 2rem 1.5rem;
+}
+
+div.border {
+  border: 1px solid hsl(236, 13%, 42%);
+  margin-top: 2rem;
+}
+
+.hero__more > h4 {
+  color: white;
+  font-size: 18px;
+}
+
+.hero__more > h4:hover {
+  color: hsl(35, 77%, 62%);
+  cursor: pointer;
+}
+
+.hero__more > p {
+  color: hsl(236, 13%, 42%);
+  padding-top: 10px;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+aside > h2 {
+  color: hsl(35, 77%, 62%);
+  padding-top: 2rem;
+  font-size: 30px;
+  padding-left: 1.5rem;
+}
+
+/* Last section */
+.more__info {
+  grid-area: more__info;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem 0 2rem 0;
+}
+
+
+section > div[class^="more__info__col--"] {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+div[class^="more__info__col--"] > img {
+ /*  width: 100%; */
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+}
+
+.content__img {
+ /*  height: 100%; */
+  height: 110px;
+}
+
+div.content__img > h2 {
+  color: hsl(233, 8%, 79%);
+}
+
+div.content__img > h4 {
+  padding: 0.8rem 0;
+}
+
+div.content__img > h4:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+div.content__img > p {
+  line-height: 1.4rem;
+  color: hsl(233, 8%, 79%);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "desktop__image"
+      "article__hero__one"
+      "article__hero__two"
+      "aside"
+      "more__info";
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+  }
+  header {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  header > img.icon-menu {
+    display: block; 
+  }
+
+ .image__hero {
+    content: url("./assets/images/image-web-3-mobile.jpg");
+  }
+
+ nav > ul {
+    position: fixed;
+    height: 100vh;
+    background-color: #f3f3f3;
+    top: 60px;
+    right: -100%;
+    transition: all 1s ease-out;
+  }
+
+  nav ul > li {
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    display: block;
+  }
+
+  nav ul > li:first-child {
+    margin-top: 5rem;
+  }
+  
+  nav > ul.show {
+    right: -20%;
+    height: 100%;
+    width: 100%;
+  }
+
+  ul > li a {
+    font-size: 1.5rem;
+    color: hsl(240, 100%, 5%);
+  }
+
+  .more__info {
+    width: 100%;
+    max-width: 768px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "info__1" "info__2" "info__3";
+  } 
+
+  h1 {
+    width: 100%;
+  } 
+}
