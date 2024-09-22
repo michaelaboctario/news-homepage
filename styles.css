@@ -91,7 +91,7 @@ section > img {
 
 .image__hero {
   object-fit: cover;
-  height: 490px;
+  height: 370px;
   width: 100%;
 }
 
@@ -138,12 +138,12 @@ aside {
 }
 
 .hero__more {
-  padding: 2rem 1.5rem;
+  padding: 20px 15px;
 }
 
 div.border {
   border: 1px solid hsl(236, 13%, 42%);
-  margin-top: 2rem;
+  margin-top: 15px;
 }
 
 .hero__more > h4 {
@@ -160,14 +160,22 @@ div.border {
   color: hsl(236, 13%, 42%);
   padding-top: 10px;
   line-height: 2rem;
-  margin-top: 1rem;
+  margin-top: 10px;
+}
+
+.aside__more {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: column;
+  column-gap: 10px;
 }
 
 aside > h2 {
   color: hsl(35, 77%, 62%);
-  padding-top: 2rem;
+  padding-top: 20px;
   font-size: 30px;
-  padding-left: 1.5rem;
+  padding-left: 15px;
 }
 
 /* Last section */
@@ -175,8 +183,8 @@ aside > h2 {
   grid-area: more__info;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 1rem 0 2rem 0;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 
@@ -268,7 +276,7 @@ div.content__img > p {
   }
   
   nav > ul.show {
-    right: -20%;
+    right: -10%;
     height: 100%;
     width: 100%;
   }
